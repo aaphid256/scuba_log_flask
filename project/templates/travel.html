@@ -1,0 +1,67 @@
+<!-- Destinations Page -->
+{% extends "layout.html" %} {% block title %} Destinations {% endblock %} {%
+block main %}
+<!-- Header -->
+<h1>Destinations</h1>
+
+<!-- Travel History Table -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Destination Name</th>
+      <th scope="col">Travel Date</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for location in locations %}
+    <!-- Table Rows -->
+    <tr>
+      <td>{{ location["destination"] }}</td>
+      <td>{{ location["date"] }}</td>
+      <td>{{ location["notes"] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<!-- Travel Entry Form -->
+<form action="/travel" method="post">
+  <!-- Destination Name Input -->
+  <div class="mb-3">
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="destination"
+      placeholder="Destination Name"
+      type="text"
+    />
+  </div>
+  <!-- Travel Date Input -->
+  <div class="mb-3">
+    Travel Date
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="date"
+      placeholder="Date"
+      type="date"
+    />
+  </div>
+  <!-- Notes Input -->
+  <div class="mb-3">
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="notes"
+      placeholder="Notes"
+      type="text"
+    />
+  </div>
+  <!-- Add Travel Button -->
+  <button class="btn btn-primary" type="submit">Add Travel</button>
+</form>
+{% endblock %}

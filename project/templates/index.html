@@ -1,0 +1,56 @@
+<!-- History Page -->
+{% extends "layout.html" %} {% block title %} History {% endblock %} {% block
+main %}
+<!-- Header for the History page, displaying the user's name -->
+<h1>{{ name }}</h1>
+
+<!-- Table for displaying the dive history -->
+<table class="table table-striped">
+  <!-- Table header with column names -->
+  <thead>
+    <tr>
+      <th scope="col">Dive Number</th>
+      <th scope="col">Date</th>
+      <th scope="col">Location</th>
+      <th scope="col">Surface Interval</th>
+      <th scope="col">Time In</th>
+      <th scope="col">Dive Time</th>
+      <th scope="col">Max Depth (ft)</th>
+      <th scope="col">Average Dept (ft)h</th>
+      <th scope="col">Gas Used</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+
+  <!-- Table body with dive log entries -->
+  <tbody>
+    {% for dive in dives %}
+    <tr>
+      <td>{{ dive["dive_num"] }}</td>
+      <td>{{ dive["date"] }}</td>
+      <td>{{ dive["location"] }}</td>
+      <td>{{ dive["surf_int"] }}</td>
+      <td>{{ dive["time_in"] }}</td>
+      <td>{{ dive["dive_time"] }}</td>
+      <td>{{ dive["max_depth"] }}</td>
+      <td>{{ dive["avg_depth"] }}</td>
+      <td>{{ dive["gas_used"] }}</td>
+      <td>{{ dive["notes"] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+
+  <!-- Table footer with total time in water -->
+  <tfoot>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td scope="col">Total Time in Water</td>
+      <td>{{ total_time }}</td>
+    </tr>
+  </tfoot>
+</table>
+
+{% endblock %}

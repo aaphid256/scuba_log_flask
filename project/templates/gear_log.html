@@ -1,0 +1,108 @@
+<!-- Gear Log Page -->
+{% extends "layout.html" %} {% block title %} Gear Log {% endblock %} {% block
+main %}
+<!-- Heading for Gear Log -->
+<h1>Gear Log</h1>
+
+<!-- Table for displaying gear log entries -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!-- Table header columns -->
+      <th scope="col">Type</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Date Purchased</th>
+      <th scope="col">Condition</th>
+      <th scope="col">Last Serviced</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in gear %}
+    <!-- Table rows with gear details from the database -->
+    <tr>
+      <td>{{ row["type"] }}</td>
+      <td>{{ row["brand"] }}</td>
+      <td>{{ row["date_purchased"] }}</td>
+      <td>{{ row["condition"] }}</td>
+      <td>{{ row["last_service"] }}</td>
+      <td>{{ row["notes"] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<!-- Form for adding new gear entry -->
+<form action="/gear_log" method="post">
+  <div class="mb-3">
+    <!-- Input field for gear type -->
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="type"
+      placeholder="Gear Type"
+      type="text"
+    />
+  </div>
+  <div class="mb-3">
+    <!-- Input field for gear brand -->
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="brand"
+      placeholder="Brand"
+      type="text"
+    />
+  </div>
+  <div class="mb-3">
+    <!-- Input field for date purchased -->
+    Date Purchased
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="date_purchased"
+      placeholder="Date Purchased"
+      type="date"
+    />
+  </div>
+  <div class="mb-3">
+    <!-- Input field for gear condition (New/Used) -->
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="condition"
+      placeholder="New/Used"
+      type="text"
+    />
+  </div>
+  <div class="mb-3">
+    <!-- Input field for date last serviced -->
+    Date Last Serviced
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="last_service"
+      placeholder="Date Last Serviced"
+      type="date"
+    />
+  </div>
+  <div class="mb-3">
+    <!-- Input field for additional notes -->
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="notes"
+      placeholder="Notes"
+      type="text"
+    />
+  </div>
+  <!-- Button to submit the form and add a new gear entry -->
+  <button class="btn btn-primary" type="submit">Add Gear</button>
+</form>
+{% endblock %}

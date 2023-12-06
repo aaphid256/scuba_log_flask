@@ -1,0 +1,26 @@
+/* Size for brand */
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #0077cc; /* Deep Blue */
+}
+
+nav .navbar-brand .cyan {
+    color: #00bcd4; /* Cyan */
+}
+
+nav .navbar-brand .sea-green {
+    color: #2e944b; /* Sea Green */
+}
+
+nav .navbar-brand .coral {
+    color: #ff4040; /* Coral Red */
+}
+
+/* Light blue-green background color for the navbar */
+nav.navbar {
+    background-color: #aaf0e3; /* Light Blue-Green */
+}

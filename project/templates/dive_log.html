@@ -1,0 +1,140 @@
+<!-- Dive Log Form Page -->
+{% extends "layout.html" %} {% block title %} Dive Log {% endblock %} {% block
+main %}
+<!-- Header for the Dive Log page -->
+<h1>Dive Log</h1>
+
+<!-- Form for logging a dive -->
+<form action="/dive_log" method="post">
+  <!-- Dive Number input field -->
+  <div class="mb-3">
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="dive_num"
+      placeholder="Dive Number"
+      type="number"
+    />
+  </div>
+
+  <!-- Dive Date input field -->
+  <div class="mb-3">
+    Dive Date
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="date"
+      placeholder="Date"
+      type="date"
+    />
+  </div>
+
+  <!-- Location input field -->
+  <div class="mb-3">
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="location"
+      placeholder="Location"
+      type="text"
+    />
+  </div>
+
+  <!-- Surface Interval input field -->
+  Surface Interval
+  <div class="mb-3">
+    <input
+      type="text"
+      name="surf_int"
+      id="durationForm"
+      maxlength="8"
+      pattern="^((\d+:)?\d+:)?\d*$"
+      title="Surface Interval"
+      placeholder="hh:mm:ss"
+      size="10"
+    />
+  </div>
+
+  <!-- Time In input field -->
+  <div class="mb-3">
+    Time In
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="time_in"
+      placeholder="Time In"
+      type="time"
+    />
+  </div>
+
+  <!-- Dive Time input field -->
+  Dive Time
+  <div class="mb-3">
+    <input
+      type="text"
+      name="dive_time"
+      id="durationForm"
+      maxlength="8"
+      pattern="^((\d+:)?\d+:)?\d*$"
+      title="Dive Time"
+      placeholder="hh:mm:ss"
+      size="10"
+    />
+  </div>
+
+  <!-- Max Depth input field -->
+  <div class="mb-3">
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="max_depth"
+      placeholder="Max Depth (ft)"
+      type="number"
+    />
+  </div>
+
+  <!-- Average Depth input field -->
+  <div class="mb-3">
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="avg_depth"
+      placeholder="Average Depth (ft)"
+      type="number"
+    />
+  </div>
+
+  <!-- Gas Used input field -->
+  <div class="mb-3">
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="gas_used"
+      placeholder="Gas Used"
+      type="text"
+    />
+  </div>
+
+  <!-- Notes input field -->
+  <div class="mb-3">
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control mx-auto w-auto"
+      name="notes"
+      placeholder="Notes"
+      type="text"
+    />
+  </div>
+
+  <!-- Submit button for adding a new dive log entry -->
+  <button class="btn btn-primary" type="submit">Add Log</button>
+</form>
+{% endblock %}
