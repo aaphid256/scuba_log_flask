@@ -1,5 +1,6 @@
 # SCUBA Log
 > This SCUBA Log project for cs50 is a Flask website that allows users to keep track of SCUBA related activity. Users are able to log into the website and log individual dives as well as their equipment and travel experience. This final project was an opportunity to develop my own software using the skills I learned in cs50.
+[Video Introduction](https://www.youtube.com/watch?v=FoU-_yPjXz8)
 
 
 ## Requirements  (Prerequisites)
